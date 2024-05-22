@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Open Service Call</h2>
+<form method="POST" action="{{ url_for('open_service_call') }}">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.department.label }}<br>
+        {{ form.department() }}
+    </p>
+    <p>
+        {{ form.urgency.label }}<br>
+        {{ form.urgency() }}
+    </p>
+    <p>
+        {{ form.call_type.label }}<br>
+        {{ form.call_type() }}
+    </p>
+    <p>
+        {{ form.description.label }}<br>
+        {{ form.description(rows=5) }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

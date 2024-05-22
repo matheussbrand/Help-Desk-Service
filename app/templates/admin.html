@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Panel</h2>
+<form method="POST" action="{{ url_for('admin') }}">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(size=32) }}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}
+    </p>
+    <p>
+        {{ form.confirm.label }}<br>
+        {{ form.confirm(size=32) }}
+    </p>
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}
+    </p>
+    <p>
+        {{ form.role.label }}<br>
+        {{ form.role(size=32) }}
+    </p>
+    <p>
+        {{ form.department.label }}<br>
+        {{ form.department(size=32) }}
+    </p>
+    <p>
+        {{ form.privilege.label }}<br>
+        {{ form.privilege() }}
+    </p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
